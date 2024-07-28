@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle, Screen
 import random
 
@@ -27,10 +28,18 @@ tim.shape("turtle")
 random_walk = [0, 90, 180, 270]
 t_size = tim.pensize(12)
 tim.speed("fast")
+turtle.colormode(255)
 
-for i in range(0, 300, ):
+def random_colors():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
+
+for i in range(0, 300):
     tim.forward(30)
-    tim.color(random.choice(colors))
+    tim.color(random_colors())
     tim.setheading(random.choice(random_walk))
 
 
